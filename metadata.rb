@@ -5,5 +5,5 @@ license          "Apache 2.0"
 description      "Chef server on chef.typo3.org"
 version          "0.1.5"
 
-depends "chef-server", "= 2.0.0"
+depends "chef-server", "~> 2.1.0"
 depends "ssl_certificates"

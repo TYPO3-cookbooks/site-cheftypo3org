@@ -3,3 +3,5 @@ ssl_certificate "wildcard.typo3.org" do
 end
 
 include_recipe "chef-server::default"
+
+include_recipe "#{cookbook_name}::berks-api"

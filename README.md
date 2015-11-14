@@ -23,3 +23,6 @@ berks-api
 source 'http://chef.typo3.org:26200'
 ```
 * Yes, this discloses our internal cookbook names. But well, they're mostly on Github anyways.
+* Log output can be found in `/etc/sv/berks-api/log/main/current`.
+
+* In case that the intial deployment hangs at `wait for berks-api service socket`, kill the chef run and copy over `/etc/chef/client.pem -> /opt/berkshelf-api-home/`. This is a wonderful bootstrap problem.

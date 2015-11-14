@@ -7,3 +7,4 @@ version          "0.1.9"
 
 depends "chef-server", "~> 2.1.0"
 depends "ssl_certificates"
+depends "berkshelf-api-server", "= 2.1.1"

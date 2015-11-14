@@ -5,4 +5,6 @@ default['chef-server']['package_file'] = 'https://web-dl.packagecloud.io/chef/st
 
 default['chef-server']['api_fqdn'] = "chef.typo3.org"
 # default['chef-server']['configuration']['nginx']['ssl_certificate'] = "#{node[:ssl_certificates][:path]}/wildcard.typo3.org.crt"
-#default['chef-server']['configuration']['nginx']['ssl_certificate_key'] = "#{node[:ssl_certificates][:path]}/wildcard.typo3.org.key"
+# default['chef-server']['configuration']['nginx']['ssl_certificate_key'] = "#{node[:ssl_certificates][:path]}/wildcard.typo3.org.key"
+
+default['site-cheftypo3org']['ssl_certificate'] = "wildcard.typo3.org"

@@ -1,22 +1,15 @@
 include_recipe "berkshelf-api-server::app"
 
-# without this, we end up in a wonderful bootstrap problem - we wait for the API to become available, although it won't
-# as the client.pem isn't available yet. However, template[.../client.pem] cannot be executed prior to setting up the
-# berkshelf user etc. So we do not *enable* the runit_service[berks-api] in above cookbook, but instead only let
-# it create service files and later notify it to enable/start as soon as the client.pem has been copied.
-resources("runit_service[berks-api]").action :create
-
 # We copy over the client.pem into a place accessible for berks-api
 template File.join(node['berkshelf_api']['home'], 'client.pem') do
   source "/etc/chef/client.pem"
   local true
   owner node['berkshelf_api']['owner']
   group node['berkshelf_api']['group']
-  notifies :enable, "runit_service[berks-api]"
   notifies :restart, "runit_service[berks-api]"
 end
 
-ruby_block "ignore runit sv directories" do
+ruby_block "ignore runit sv directories for etckeeper" do
   block do
     ignore_dir = "sv/*/log/main/*"
     fe = Chef::Util::FileEdit.new("/etc/.gitignore")

@@ -6,6 +6,7 @@ template File.join(node['berkshelf_api']['home'], 'client.pem') do
   local true
   owner node['berkshelf_api']['owner']
   group node['berkshelf_api']['group']
+  ignore_failure true # not available in chef-zero / test-kitchen
   notifies :restart, "runit_service[berks-api]"
 end
 

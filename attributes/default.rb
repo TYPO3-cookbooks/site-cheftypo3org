@@ -6,3 +6,5 @@ node.override['chef-server']['package_file'] = 'https://web-dl.packagecloud.io/c
 node.override['chef-server']['api_fqdn'] = "chef.typo3.org"
 node.override['chef-server']['configuration']['nginx']['ssl_certificate'] = "#{node[:ssl_certificates][:path]}/wildcard.typo3.org.crt"
 node.override['chef-server']['configuration']['nginx']['ssl_certificate_key'] = "#{node[:ssl_certificates][:path]}/wildcard.typo3.org.key"
+
+default['site-cheftypo3org']['ssl_certificate'] = "wildcard.typo3.org"

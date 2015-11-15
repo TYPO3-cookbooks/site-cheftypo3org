@@ -1,3 +1,5 @@
+include_recipe "build-essential"
+
 include_recipe "berkshelf-api-server::app"
 
 # We copy over the client.pem into a place accessible for berks-api

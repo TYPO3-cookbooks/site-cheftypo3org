@@ -1,0 +1,31 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 2048
+  synced_folders:
+    - ["/Users/st/tmp", "/host-tmp", "create: true, type: :nfs"]
+
+provisioner:
+  name: chef_zero
+  # otherwise recofiguration of some ingredients that launch an own
+  # chef-zero will fail
+  chef_zero_port: 18889
+
+platforms:
+  - name: ubuntu-14.04
+  - name: debian-7.8
+  - name: debian-8.2
+
+suites:
+  - name: default
+    run_list:
+      - recipe[site-cheftypo3org::default]
+    attributes:
+      chef-server:
+        api_fqdn: chef-server.vagrant
+      site-cheftypo3org:
+        ssl_certificate: wildcard.vagrant
+    driver:
+      network:
+        - ['private_network', {ip: '192.168.243.6'}]

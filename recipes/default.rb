@@ -8,4 +8,5 @@ end
 
 include_recipe "chef-server::default"
 
-include_recipe "#{cookbook_name}::berks-api"
+# This is currently not working, therefore we need to start the berks-api service manually atm.
+#include_recipe "#{cookbook_name}::berks-api"

@@ -27,6 +27,10 @@ suites:
     attributes:
       chef-server:
         api_fqdn: chef-server.vagrant
+        configuration:
+          nginx:
+            ssl_certificate: /etc/ssl_certs/wildcard.vagrant.crt
+            ssl_certificate_key: /etc/ssl_certs/wildcard.vagrant.key
       site-cheftypo3org:
         ssl_certificate: wildcard.vagrant
     driver:

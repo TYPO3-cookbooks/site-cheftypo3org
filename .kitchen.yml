@@ -16,9 +16,9 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-14.04
+#  - name: ubuntu-12.04
   - name: debian-7.8
-  - name: debian-8.2
+#  - name: debian-8.2
 
 suites:
   - name: default

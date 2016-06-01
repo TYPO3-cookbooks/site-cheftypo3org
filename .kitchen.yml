@@ -12,6 +12,9 @@ provisioner:
   # chef-zero will fail
   chef_zero_port: 18889
 
+verifier:
+  name: inspec
+
 platforms:
   - name: ubuntu-14.04
   - name: debian-7.8

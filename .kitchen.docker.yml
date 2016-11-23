@@ -1,0 +1,8 @@
+driver:
+  name: docker
+  use_sudo: false
+  provision_command:
+    - apt-get install wget -y
+    - apt-get install net-tools cron -y
+  disable_upstart: false
+  run_command: /sbin/init

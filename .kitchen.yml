@@ -12,10 +12,13 @@ provisioner:
   # chef-zero will fail
   chef_zero_port: 18889
 
+verifier:
+  name: inspec
+
 platforms:
-  - name: ubuntu-14.04
+#  - name: ubuntu-12.04
   - name: debian-7.8
-  - name: debian-8.2
+#  - name: debian-8.2
 
 suites:
   - name: default
@@ -24,6 +27,10 @@ suites:
     attributes:
       chef-server:
         api_fqdn: chef-server.vagrant
+        configuration:
+          nginx:
+            ssl_certificate: /etc/ssl_certs/wildcard.vagrant.crt
+            ssl_certificate_key: /etc/ssl_certs/wildcard.vagrant.key
       site-cheftypo3org:
         ssl_certificate: wildcard.vagrant
     driver:

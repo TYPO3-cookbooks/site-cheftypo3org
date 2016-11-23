@@ -3,7 +3,7 @@ maintainer       "TYPO3 Association"
 maintainer_email "steffen.gebert@typo3.org"
 license          "Apache 2.0"
 description      "Chef server on chef.typo3.org"
-version          "0.1.16"
+version          "0.1.17"
 
 depends "t3-base",              "~> 0.2.0"
 

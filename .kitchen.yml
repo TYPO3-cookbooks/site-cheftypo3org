@@ -22,6 +22,7 @@ platforms:
 suites:
   - name: default
     run_list:
+      - recipe[site-cheftypo3org_test::hostname]
       - recipe[site-cheftypo3org::default]
     attributes:
       chef-server:

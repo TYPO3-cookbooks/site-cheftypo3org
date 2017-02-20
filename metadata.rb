@@ -5,6 +5,8 @@ license          "Apache 2.0"
 description      "Chef server on chef.typo3.org"
 version          "0.1.14"
 
-depends "chef-server", "= 4.1.0"
-depends "ssl_certificates"
-depends "berkshelf-api-server", "= 2.1.1"
+depends          "t3-base",          "~> 0.2.60"
+
+depends          "ssl_certificates", "~> 1.1.0"
+
+depends          "chef-server",      "= 5.1.0"
